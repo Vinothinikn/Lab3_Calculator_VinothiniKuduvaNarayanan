@@ -59,7 +59,7 @@ function round() {
 function square() {
     var num = parseFloat(document.frmCalc.txtNumber.value);
         if (!(isNaN(num))) {
-           var square = num ** 2;
+           var square = Math.pow(num,2);
             document.frmCalc.txtNumber.value = square;
         }
 }
@@ -120,21 +120,22 @@ function power() {
 //Note that this function is dependent on the value of global variable.        
 function calculate() {
     var num = parseFloat(document.frmCalc.txtNumber.value);
+    var total = 0;
         if (!(isNaN(num))) {
             if (calc == "Add"){
-                var total = prevCalc + num;
+               total  = prevCalc + num;
                 document.frmCalc.txtNumber.value = total;
             }
             else if(calc == "Subtract"){
-                var total = prevCalc - num;
+                 total = prevCalc - num;
                 document.frmCalc.txtNumber.value = total;
             }
             else if(calc == "mul"){
-                var total = prevCalc * num;
+                 total = prevCalc * num;
                 document.frmCalc.txtNumber.value = total;
             }
             else if(calc == "div"){
-                var total = prevCalc / num;
+                 total = prevCalc / num;
                 document.frmCalc.txtNumber.value = total;
             }
             else if(calc == "power"){
