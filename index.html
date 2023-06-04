@@ -27,47 +27,47 @@
 	<main id="calc">
 	
 		<!-- form for user input that represents a calculator -->
-		<form name="frmCalc" id="frmCalc">
-			<p>Please enter a numeric value or use the number buttons below.</p>
+		<form name="form" id="form">
+			<p>Enter the numeric value or use the number buttons below.</p>
 			
 			<!-- Text Box to enter a numeric value -->
-			<input type="text" name="txtNumber" value="" size="20" /><br /><br/>
+			<input type="text" name="inputText" value="" size="20" id="result" /><br /><br/>
 			
 			<!-- Number buttons -->
-			<input type="button" value="1" name="btn1" id="but1" onclick="showNum(1)"/>
-			<input type="button" value="2" name="btn2" id="but2" onclick="showNum(2)"/>
-			<input type="button" value="3" name="btn3" onclick="showNum(3)" />
+			<input type="button" value="1" name="btn1" id="but1" onclick="appendNumber(1)"/>
+			<input type="button" value="2" name="btn2" id="but2" onclick="appendNumber(2)"/>
+			<input type="button" value="3" name="btn3" onclick="appendNumber(3)" />
 			
 			<!-- ADD: Sets up operation to add current number to next number entered -->
-			<input type="button" value="+" name="btnPlus" onclick="add()" /><br/>
+			<input type="button" value="+" name="btnPlus" onclick="performOperation('+')" /><br/>
 			
 			<!-- Number buttons -->
-			<input type="button" value="4" name="btn4" onclick="showNum(4)" />
-			<input type="button" value="5" name="btn5" onclick="showNum(5)" />
-			<input type="button" value="6" name="btn6" onclick="showNum(6)" />
+			<input type="button" value="4" name="btn4" onclick="appendNumber(4)" />
+			<input type="button" value="5" name="btn5" onclick="appendNumber(5)" />
+			<input type="button" value="6" name="btn6" onclick="appendNumber(6)" />
 			
 			<!-- *** Subtract (Implement Me!) *** -->
-			<input type="button" value="-" name="btnMinus" onclick="subtract()" /><br/>
+			<input type="button" value="-" name="btnMinus" onclick="performOperation('-')" /><br/>
 			
 			<!-- Number buttons -->
-			<input type="button" value="7" name="btn7" onclick="showNum(7)" />
-			<input type="button" value="8" name="btn8" onclick="showNum(8)" />
-			<input type="button" value="9" name="btn9" onclick="showNum(9)" />
+			<input type="button" value="7" name="btn7" onclick="appendNumber(7)" />
+			<input type="button" value="8" name="btn8" onclick="appendNumber(8)" />
+			<input type="button" value="9" name="btn9" onclick="appendNumber(9)" />
 			
 			<!-- *** Multiply (Implement Me!) *** -->
-			<input type="button" value="*" name="btnTimes" onclick="mul()" /><br/>
+			<input type="button" value="*" name="btnTimes" onclick="performOperation('*')" /><br/>
 			
 			<!-- Number buttons -->
-			<input type="button" value="0" name="btn0" onclick="showNum(0)" />
+			<input type="button" value="0" name="btn0" onclick="appendNumber(0)" />
 
 			<!-- *** Power (Implement Me!) Takes two values n^y *** -->
-			<input type="button" value="^" name="btnPow" onclick="power()"/>
+			<input type="button" value="^" name="btnPow" onclick="performOperation('^')"/>
 			
 			<!-- *** Power2 (Implement Me!) *** Takes one value n^2-->
 			<input type="button" value="^2" name="btnPow2" onclick="square()"/>
 			
 			<!-- *** Divide (Implement Me!) *** -->
-			<input type="button" value="/" name="btnDivide" onclick="div()"/><br/>
+			<input type="button" value="/" name="btnDivide" onclick="performOperation('/')"/><br/>
 			
 			<!-- Decrements value currently displayed (Implement Me!)-->
 			<input type="button" value="--" name="btnDecrement" onclick="decrement()" />
@@ -85,7 +85,7 @@
 			<input type="button" value="Round" name="btnRound" onclick="round()"/>
 			
 			<!-- *** Decimal (Implement Me!) *** -->
-			<input type="button" value="." name="btnDecimal" onclick="showNum('.')" />
+			<input type="button" value="." name="btnDecimal" onclick="appendNumber('.')" />
 			
 			<br/><br/>
 				 
