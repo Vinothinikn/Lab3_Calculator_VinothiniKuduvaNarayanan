@@ -15,6 +15,7 @@ function decrement() {
         if (!(isNaN(input))) {
             input--;
             document.getElementById("result").value = input;
+            operator = "";
         }
 }
 
@@ -24,6 +25,7 @@ function increment() {
         if (!(isNaN(input))) {
             input++;
             document.getElementById("result").value = input;
+            operator = "";
         }
 }
 
@@ -33,6 +35,7 @@ function sqrt() {
         if (!(isNaN(input))) {
            var sqroot = Math.sqrt(input);
            document.getElementById("result").value = sqroot;
+           operator = "";
         }
 }
 
@@ -42,6 +45,7 @@ function floor() {
         if (!(isNaN(input))) {
            var floor = Math.floor(input);
            document.getElementById("result").value = floor;
+           operator = "";
         }
 }
 
@@ -51,6 +55,7 @@ function round() {
         if (!(isNaN(input))) {
            var round = Math.round(input);
            document.getElementById("result").value = round;
+           operator = "";
         }
 }
 
@@ -60,6 +65,7 @@ function square() {
         if (!(isNaN(input))) {
            var square = Math.pow(input,2);
            document.getElementById("result").value= square;
+           operator = "";
         }
 }
 
@@ -77,7 +83,7 @@ function performOperation(operand){
             operator = "mul";
         }
         else if(operand == "/"){
-            operator = "div";
+            operator = "division";
         }
         else if(operand == "^"){
             operator = "power";
@@ -102,13 +108,16 @@ function calculate() {
                  total = preNumber * input;
                  document.getElementById("result").value = total;
             }
-            else if(operator == "div"){
+            else if(operator == "division"){
                  total = preNumber / input;
                  document.getElementById("result").value = total;
             }
             else if(operator == "power"){
                  total = Math.pow(preNumber,input);
                 document.getElementById("result").value = total;
+            }
+            else{
+                alert("Please enter valid operation!");
             }
             
 }}
